@@ -79,19 +79,64 @@ module.exports = {
   				'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
   				border: 'hsl(var(--sidebar-border))',
   				ring: 'hsl(var(--sidebar-ring))'
+  			},
+  			neural: {
+  				'50': '#f4f3ff',
+  				'100': '#ebe9fe',
+  				'200': '#d9d6fe',
+  				'300': '#bfb8fd',
+  				'400': '#a090fa',
+  				'500': '#8366f7',
+  				'600': '#7144f1',
+  				'700': '#6132dd',
+  				'800': '#522ab9',
+  				'900': '#442897',
+  				'950': '#2a1665'
+  			},
+  			cyber: {
+  				'50': '#ecfeff',
+  				'100': '#cffafe',
+  				'200': '#a5f3fc',
+  				'300': '#67e8f9',
+  				'400': '#22d3ee',
+  				'500': '#06b6d4',
+  				'600': '#0891b2',
+  				'700': '#0e7490',
+  				'800': '#155e75',
+  				'900': '#164e63',
+  				'950': '#083344'
   			}
   		},
   		fontFamily: {
   			sans: [
-  				'Inter var',
+  				'Inter',
+  				'ui-sans-serif',
+  				'system-ui',
   				'sans-serif'
+  			],
+  			neural: [
+  				'Orbitron',
+  				'monospace'
+  			],
+  			mono: [
+  				'ui-monospace',
+  				'SFMono-Regular',
+  				'Consolas',
+  				'monospace'
   			]
   		},
   		animation: {
   			'fade-in': 'fade-in 0.5s ease-out',
   			'slide-up': 'slide-up 0.5s ease-out',
   			'accordion-down': 'accordion-down 0.2s ease-out',
-  			'accordion-up': 'accordion-up 0.2s ease-out'
+  			'accordion-up': 'accordion-up 0.2s ease-out',
+  			'neural-pulse': 'neural-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+  			'neural-spin': 'neural-spin 3s linear infinite',
+  			'neural-glow': 'neural-glow 2s ease-in-out infinite alternate',
+  			'float': 'float 6s ease-in-out infinite',
+  			'glow': 'glow 2s ease-in-out infinite alternate',
+  			'gradient-shift': 'gradient-shift 3s ease infinite',
+  			'cyber-grid': 'cyber-grid 20s linear infinite'
   		},
   		keyframes: {
   			'fade-in': {
@@ -127,12 +172,84 @@ module.exports = {
   				to: {
   					height: '0'
   				}
+  			},
+  			'neural-pulse': {
+  				'0%, 100%': {
+  					opacity: '1',
+  					transform: 'scale(1)'
+  				},
+  				'50%': {
+  					opacity: '0.7',
+  					transform: 'scale(1.05)'
+  				}
+  			},
+  			'neural-spin': {
+  				'0%': {
+  					transform: 'rotate(0deg)'
+  				},
+  				'100%': {
+  					transform: 'rotate(360deg)'
+  				}
+  			},
+  			'neural-glow': {
+  				'0%': {
+  					'box-shadow': '0 0 20px rgba(168, 85, 247, 0.3)'
+  				},
+  				'100%': {
+  					'box-shadow': '0 0 40px rgba(168, 85, 247, 0.8)'
+  				}
+  			},
+  			'float': {
+  				'0%, 100%': {
+  					transform: 'translateY(0px)'
+  				},
+  				'50%': {
+  					transform: 'translateY(-20px)'
+  				}
+  			},
+  			'glow': {
+  				'0%': {
+  					'box-shadow': '0 0 20px rgba(168, 85, 247, 0.3), 0 0 40px rgba(6, 182, 212, 0.2)'
+  				},
+  				'100%': {
+  					'box-shadow': '0 0 40px rgba(168, 85, 247, 0.6), 0 0 80px rgba(6, 182, 212, 0.4)'
+  				}
+  			},
+  			'gradient-shift': {
+  				'0%, 100%': {
+  					'background-position': '0% 50%'
+  				},
+  				'50%': {
+  					'background-position': '100% 50%'
+  				}
+  			},
+  			'cyber-grid': {
+  				'0%': {
+  					'background-position': '0 0'
+  				},
+  				'100%': {
+  					'background-position': '40px 40px'
+  				}
   			}
   		},
   		borderRadius: {
   			lg: 'var(--radius)',
   			md: 'calc(var(--radius) - 2px)',
   			sm: 'calc(var(--radius) - 4px)'
+  		},
+  		backgroundImage: {
+  			'neural-gradient': 'linear-gradient(135deg, rgba(168, 85, 247, 0.3), rgba(6, 182, 212, 0.3))',
+  			'cyber-gradient': 'linear-gradient(45deg, rgba(6, 182, 212, 0.2), rgba(168, 85, 247, 0.2))',
+  			'neural-radial': 'radial-gradient(ellipse at center, rgba(168, 85, 247, 0.15) 0%, transparent 70%)',
+  			'cyber-radial': 'radial-gradient(ellipse at center, rgba(6, 182, 212, 0.15) 0%, transparent 70%)'
+  		},
+  		boxShadow: {
+  			'neural': '0 0 20px rgba(168, 85, 247, 0.3)',
+  			'cyber': '0 0 20px rgba(6, 182, 212, 0.3)',
+  			'neural-lg': '0 0 40px rgba(168, 85, 247, 0.4)',
+  			'cyber-lg': '0 0 40px rgba(6, 182, 212, 0.4)',
+  			'glow': '0 0 20px rgba(168, 85, 247, 0.3), 0 0 40px rgba(6, 182, 212, 0.2)',
+  			'glow-lg': '0 0 40px rgba(168, 85, 247, 0.5), 0 0 80px rgba(6, 182, 212, 0.3)'
   		}
   	}
   },
